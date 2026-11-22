@@ -1,7 +1,4 @@
 public class Book extends Publication {
-    private String title;
-    private String author;
-    private int year;
     private String ISBN;
 
     public Book(String title, String author, int year, String ISBN) {
@@ -15,10 +12,7 @@ public class Book extends Publication {
 
     @Override
     public String toString() {
-        return String.format(
-                "Название: %s, Автор: %s, Год: %d, ISBN: %s",
-                title, author, year, ISBN
-        );
+        return super.toString() + String.format(", ISBN: %s", ISBN);
     }
 
     @Override
@@ -29,7 +23,7 @@ public class Book extends Publication {
 
     @Override
     public int hashCode() {
-        return super.hashCode() +  ISBN.hashCode();
+        return super.hashCode() + ISBN.hashCode();
     }
 
     public String getISBN() {
