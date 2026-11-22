@@ -1,4 +1,4 @@
-public class Magazine extends Publication {
+public class Magazine extends Publication implements Printable {
     private int issueNumber;
 
     public Magazine(String title, String author, int year, int issueNumber) {
@@ -8,6 +8,11 @@ public class Magazine extends Publication {
 
     public String getType() {
         return "Журнал";
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println(toString());
     }
 
     @Override

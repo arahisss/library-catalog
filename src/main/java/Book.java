@@ -1,4 +1,4 @@
-public class Book extends Publication {
+public class Book extends Publication implements Printable {
     private String ISBN;
 
     public Book(String title, String author, int year, String ISBN) {
@@ -8,6 +8,11 @@ public class Book extends Publication {
 
     public String getType() {
         return "Книга";
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println(toString());
     }
 
     @Override

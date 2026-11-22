@@ -19,7 +19,7 @@ public abstract class Publication {
 
     @Override
     public String toString() {
-        return String.format("Название: %s, Автор: %s, Год: %d", title, author, year);
+        return String.format("%s\nНазвание: %s, Автор: %s, Год: %d", getType(), title, author, year);
     }
 
     @Override
