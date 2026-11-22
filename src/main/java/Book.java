@@ -13,6 +13,25 @@ public class Book extends Publication {
         return "Книга";
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "Название: %s, Автор: %s, Год: %d, ISBN: %s",
+                title, author, year, ISBN
+        );
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Book book = (Book) o;
+        return super.equals(book) && book.getISBN().equals(ISBN);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode() +  ISBN.hashCode();
+    }
+
     public String getISBN() {
         return ISBN;
     }
