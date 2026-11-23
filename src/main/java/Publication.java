@@ -1,4 +1,4 @@
-public abstract class Publication {
+public abstract class Publication implements Printable {
     private static int publicationCount = 0;
 
     private String title;

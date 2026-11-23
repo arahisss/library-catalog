@@ -14,7 +14,7 @@ public class Library {
 
     public void listPublications() {
         for (Publication pub : this.publications) {
-            System.out.println(pub + "\n");
+            pub.printDetails();
         }
     }
 

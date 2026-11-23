@@ -12,7 +12,7 @@ public class Magazine extends Publication implements Printable {
 
     @Override
     public void printDetails() {
-        System.out.println(toString());
+        System.out.println(this);
     }
 
     @Override
