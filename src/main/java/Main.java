@@ -10,7 +10,7 @@ public class Main {
                 \nОпция 1: Добавить новую публикацию.
                 Опция 2: Вывести список всех публикаций.
                 Опция 3: Поиск публикации по автору.
-                Опция 4: Вывести общее количество публикаций (используя статический метод).
+                Опция 4: Вывести общее количество публикаций.
                 Опция 0: Выход""";
         System.out.println(menu);
     }
@@ -18,24 +18,25 @@ public class Main {
     public static int inputInt() {
         while (true) {
             try {
-                return scanner.nextInt();
-            } catch (InputMismatchException e) {
+                return Integer.parseInt(scanner.nextLine().trim());
+            } catch (NumberFormatException e) {
                 System.out.println("Ошибка! Введите целое число.");
-                scanner.nextLine();
             }
         }
     }
 
     public static int tryInputInt() {
         try {
-            int value = scanner.nextInt();
-            scanner.nextLine();
-            return value;
-        } catch (InputMismatchException e) {
-            scanner.nextLine();
+            return Integer.parseInt(scanner.nextLine().trim());
+        } catch (NumberFormatException e) {
             System.out.println("Ошибка! Значение должно быть целым числом");
             return -1;
         }
+    }
+
+    public static String inputString() {
+        String value = scanner.nextLine().trim();
+        return value.isEmpty() ? null : value;
     }
 
     public static int inputPublicationType() {
@@ -51,6 +52,7 @@ public class Main {
         return typeChoice;
     }
 
+    // 1 - Добавление публикации
     public static void addPublication(Library library, int publicationType) {
         System.out.print("Введите название: ");
         String title = inputString();
@@ -115,15 +117,20 @@ public class Main {
         return new Newspaper(title, author, year, publicationDay);
     }
 
-
-    public static String inputString() {
-        String value = scanner.nextLine().trim();
-        return value.isEmpty() ? null : value;
+    // 3 - Поиск по автору
+    public static void searchByAuthor(Library library) {
+        System.out.print("Введите имя автора: ");
+        String author = inputString();
+        if (author == null) {
+            System.out.println("Ошибка! Имя автора не должно быть пустым");
+            return;
+        }
+        library.searchByAuthor(author);
     }
+
 
     public static void main(String[] args) {
         Library library = new Library();
-
         boolean isRunning = true;
 
         while (isRunning) {
@@ -141,6 +148,12 @@ public class Main {
                     break;
                 case 2:
                     library.listPublications();
+                    break;
+                case 3:
+                    searchByAuthor(library);
+                    break;
+                case 4:
+                    System.out.println("Общее количество публикаций: " + Publication.getPublicationCount());
                     break;
             }
         }

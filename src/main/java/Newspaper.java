@@ -17,7 +17,7 @@ public class Newspaper extends Publication implements Printable {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", День публикации: %s", publicationDay);
+        return super.toString() + String.format(", publicationDay: %s}", publicationDay);
     }
 
     @Override

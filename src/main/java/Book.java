@@ -17,7 +17,7 @@ public class Book extends Publication implements Printable {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", ISBN: %s", ISBN);
+        return super.toString() + String.format(", ISBN: %s}", ISBN);
     }
 
     @Override

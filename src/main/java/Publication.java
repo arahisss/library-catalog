@@ -20,7 +20,7 @@ public abstract class Publication implements Printable {
 
     @Override
     public String toString() {
-        return String.format("%s\nНазвание: %s, Автор: %s, Год: %d", getType(), title, author, year);
+        return String.format("%s{title: %s, author: %s, year: %d", getType(), title, author, year);
     }
 
     @Override

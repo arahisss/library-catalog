@@ -20,7 +20,7 @@ public class Library {
 
     public void searchByAuthor(String author) {
         for (Publication pub : this.publications) {
-            if (pub.getAuthor().equals(author)) {
+            if (pub.getAuthor().equalsIgnoreCase(author)) {
                 System.out.println(pub);
             }
         }
