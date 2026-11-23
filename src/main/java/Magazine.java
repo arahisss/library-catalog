@@ -17,7 +17,7 @@ public class Magazine extends Publication implements Printable {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", issueNumber: %d", issueNumber);
+        return super.toString() + String.format(", Номер выпуска: %d", issueNumber);
     }
 
     @Override

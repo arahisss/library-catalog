@@ -15,6 +15,7 @@ public abstract class Publication {
         this.title = title;
         this.author = author;
         this.year = year;
+        publicationCount++;
     }
 
     @Override
