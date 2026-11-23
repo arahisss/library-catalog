@@ -34,6 +34,7 @@ public class Newspaper extends Publication implements Printable {
     public String getPublicationDay() {
         return publicationDay;
     }
+
     public void setPublicationDay(String publicationDay) {
         this.publicationDay = publicationDay;
     }
